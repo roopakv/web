@@ -30,8 +30,9 @@ const getStrategy = async (
     callbackUriBase
   );
   const params = {
-    scope: 'openid profile email',
+    scope: 'openid profile email read:default write:test0',
     response: ['userinfo'],
+    audience: 'temporal',
   };
 
   return new Strategy({ client, params }, verify);
